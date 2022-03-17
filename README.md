@@ -30,7 +30,7 @@ mmdetection
 │   │   ├── annotations
 │   │   │      ├──instances_train2017.json
 │   │   │      ├──instances_val2017.json
-│   │   ├── train2017    
+│   │   ├── train2017
 │   │   ├── val2017
 ```
 
@@ -89,4 +89,4 @@ We find that the performance of teacher is unstable under 24e setting and may fl
 | :----: | :------: | :-----: | :----: | :------: |:------: |:------: |:------: |:------: |
 | Teacher(Group R-CNN) | R-50-FPN |   24e  | DETR Aug| 39.2 | [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/group_rcnn_24e_10_percent_coco_detr_augmentation.py)  | [ckpt](https://drive.google.com/file/d/18czpIJcKOgp8T7wE693WZEj1kbUUsaMA/view?usp=sharing) | [log](https://drive.google.com/file/d/14n09FOv3bSVLf_aYGpucYI4_Q8eJUczP/view?usp=sharing) | -
 | Teacher(Group R-CNN) | R-50-FPN |  50e  | DETR Aug|39.7| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/group_rcnn_50e_10_percent_coco_detr_augmentation.py) | [ckpt](https://drive.google.com/file/d/18czpIJcKOgp8T7wE693WZEj1kbUUsaMA/view?usp=sharing) | [log](https://drive.google.com/file/d/14n09FOv3bSVLf_aYGpucYI4_Q8eJUczP/view?usp=sharing) | [generated.bbox.json](https://drive.google.com/file/d/1hyTgWRXuCUCRcPEgsqU-0eGVqDDdw7-b/view?usp=sharing)
-| Student(FCOS) | R-50-FPN | 12e |Normal 1x Aug|  32.6| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/01_student_fcos.py) | [ckpt](https://drive.google.com/file/d/1F8vQ7hp69T3xs51lb6dKxaxB8QsG-H5T/view?usp=sharing) | [log](https://drive.google.com/file/d/1LHbp5LBQEQoFtC5z7qwVIhsHHlX6LDlM/view?usp=sharing) | -
+| Student(FCOS) | R-50-FPN | 12e |Normal 1x Aug|  33.1| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/01_student_fcos.py) | [ckpt](https://drive.google.com/file/d/1F8vQ7hp69T3xs51lb6dKxaxB8QsG-H5T/view?usp=sharing) | [log](https://drive.google.com/file/d/1LHbp5LBQEQoFtC5z7qwVIhsHHlX6LDlM/view?usp=sharing) | -
