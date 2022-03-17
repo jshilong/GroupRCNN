@@ -55,9 +55,6 @@ class PointRandomCrop(RandomCrop):
 
             if with_bbox_ann:
                 bboxes = temp_bboxes[:num_gt]
-                # point here would be dep
-                # we will sample point in model instead
-                # of dataset if there is bbox annotation
                 points = temp_bboxes[num_gt:]
                 if self.bbox_clip_border:
                     bboxes[:, 0::2] = np.clip(bboxes[:, 0::2], 0, img_shape[1])
@@ -81,10 +78,6 @@ class PointRandomCrop(RandomCrop):
                 label_key = self.bbox2label.get(key)
                 if label_key in results:
                     results[label_key] = results[label_key][valid_inds]
-
-                if False:
-                    import mmcv
-                    mmcv.imshow_bboxes(results['img'], results[key])
 
             else:
                 bboxes = temp_bboxes[:num_gt]

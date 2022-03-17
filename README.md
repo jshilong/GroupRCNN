@@ -30,7 +30,8 @@ mmdetection
 │   │   ├── annotations
 │   │   │      ├──instances_train2017.json
 │   │   │      ├──instances_val2017.json
-│   │   ├── train2017│   │   ├── val2017
+│   │   ├── train2017    
+│   │   ├── val2017
 ```
 
 You can generate point annotations with the command. It may take you several minutes for `instances_train2017.json`
@@ -46,7 +47,7 @@ Here, we sample a point from the mask for all instances. But we split the images
 as point annotations each iteration.
 - Images with only point annotations(weakly-labeled sets): Only be used to generate bbox annotations from point annotations with trained point to bbox regressor.
 ### Train and Test
-8 is the number of gpu.
+8 is the number of gpus.
 ##### For slurm
 
 Train
@@ -59,7 +60,7 @@ GPUS=8 sh tools/slurm_test.sh partition_name  job_name projects/configs/10_coco/
 ```
 Run the inference process on weakly-labeled images with point annotations to get bbox annotations.
 ```shell
-GPUS=8 sh tools/slurm_test.sh Test test projects/configs/10_coco/group_rcnn_50e_10_percent_coco_detr_augmentation.py   path_to_checkpoint  --format-only --options  "jsonfile_prefix=./generated"
+GPUS=8 sh tools/slurm_test.sh partition_name  job_name  projects/configs/10_coco/group_rcnn_50e_10_percent_coco_detr_augmentation.py   path_to_checkpoint  --format-only --options  "jsonfile_prefix=./generated"
 ```
 ##### For Pytorch distributed
 
@@ -82,10 +83,10 @@ sh tools/dist_train.sh projects/configs/10_coco/01_student_fcos.py 8 --work-dir 
 ```
 
 #### Results & Checkpoints
-We find that the performance is unstable with 1x setting and may fluctuate by about 0.2 mAP. We report the average.
+We find that the performance of teacher is unstable under 24e setting and may fluctuate by about 0.2 mAP. We report the average.
 
 | Model | Backbone | Lr schd | Augmentation | box AP | Config | Model | log |Generated Annotations |
 | :----: | :------: | :-----: | :----: | :------: |:------: |:------: |:------: |:------: |
 | Teacher(Group R-CNN) | R-50-FPN |   24e  | DETR Aug| 39.2 | [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/group_rcnn_24e_10_percent_coco_detr_augmentation.py)  | [ckpt](https://drive.google.com/file/d/18czpIJcKOgp8T7wE693WZEj1kbUUsaMA/view?usp=sharing) | [log](https://drive.google.com/file/d/14n09FOv3bSVLf_aYGpucYI4_Q8eJUczP/view?usp=sharing) | -
 | Teacher(Group R-CNN) | R-50-FPN |  50e  | DETR Aug|39.7| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/group_rcnn_50e_10_percent_coco_detr_augmentation.py) | [ckpt](https://drive.google.com/file/d/18czpIJcKOgp8T7wE693WZEj1kbUUsaMA/view?usp=sharing) | [log](https://drive.google.com/file/d/14n09FOv3bSVLf_aYGpucYI4_Q8eJUczP/view?usp=sharing) | [generated.bbox.json](https://drive.google.com/file/d/1hyTgWRXuCUCRcPEgsqU-0eGVqDDdw7-b/view?usp=sharing)
-| Student(FCOS) | R-50-FPN | 12e |Normal 1x Aug|  32.6| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/01_student_fcos.py) | [ckpt]() | [log]() | -
+| Student(FCOS) | R-50-FPN | 12e |Normal 1x Aug|  32.6| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/01_student_fcos.py) | [ckpt](https://drive.google.com/file/d/1F8vQ7hp69T3xs51lb6dKxaxB8QsG-H5T/view?usp=sharing) | [log](https://drive.google.com/file/d/1LHbp5LBQEQoFtC5z7qwVIhsHHlX6LDlM/view?usp=sharing) | -
