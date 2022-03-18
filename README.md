@@ -10,8 +10,7 @@ with only a single point annotated for each instance. The
 core of this task is to train a point-to-box regressor on well
 labeled images that can be used to predict credible bounding boxes for each point annotation.
 Group R-CNN significantly outperforms the prior
-method Point DETR by 3.9 mAP with 5% well-labeled images, which is the most challenging scenario. The codes
-and models will be made publicly available.
+method Point DETR by 3.9 mAP with 5% well-labeled images, which is the most challenging scenario.
 
 
 ![](./figs/grouprcnn.png)
