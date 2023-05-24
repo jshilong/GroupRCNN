@@ -89,3 +89,16 @@ We find that the performance of teacher is unstable under 24e setting and may fl
 | Teacher(Group R-CNN) | R-50-FPN |   24e  | DETR Aug| 39.2 | [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/group_rcnn_24e_10_percent_coco_detr_augmentation.py)  | [ckpt](https://drive.google.com/file/d/18czpIJcKOgp8T7wE693WZEj1kbUUsaMA/view?usp=sharing) | [log](https://drive.google.com/file/d/14n09FOv3bSVLf_aYGpucYI4_Q8eJUczP/view?usp=sharing) | -
 | Teacher(Group R-CNN) | R-50-FPN |  50e  | DETR Aug|39.9| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/group_rcnn_50e_10_percent_coco_detr_augmentation.py) | [ckpt](https://drive.google.com/file/d/1_yQtDBS9MqeCvRXMbAaBKyi5zgR5LP-z/view?usp=sharing) | [log](https://drive.google.com/file/d/1AiqXqbdf425tXdCP0T8pJyym-9Yf7p96/view?usp=sharing) | [generated.bbox.json](https://drive.google.com/file/d/1hyTgWRXuCUCRcPEgsqU-0eGVqDDdw7-b/view?usp=sharing)
 | Student(FCOS) | R-50-FPN | 12e |Normal 1x Aug|  33.1| [config](https://github.com/jshilong/GroupRCNN/tree/main/projects/configs/10_coco/01_student_fcos.py) | [ckpt](https://drive.google.com/file/d/1F8vQ7hp69T3xs51lb6dKxaxB8QsG-H5T/view?usp=sharing) | [log](https://drive.google.com/file/d/1LHbp5LBQEQoFtC5z7qwVIhsHHlX6LDlM/view?usp=sharing) | -
+
+### Please cite our paper in your publications if it helps your research.
+
+```
+@InProceedings{Zhang_2022_CVPR,
+    author    = {Zhang, Shilong and Yu, Zhuoran and Liu, Liyang and Wang, Xinjiang and Zhou, Aojun and Chen, Kai},
+    title     = {Group R-CNN for Weakly Semi-Supervised Object Detection With Points},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {9417-9426}
+}
+```
